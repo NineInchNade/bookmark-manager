@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Link do
 
-  context "Demonstration of how datamapper works" do
+  context "Demonstration of how DataMapper works" do
 
     # this is not a real test, it's simply a demo of how it works
     it "should be created and then retrieved from the db" do
@@ -10,7 +10,7 @@ describe Link do
       expect(Link.count).to eq (0)
       # this creates it in the database, so it's stored on the disk
       Link.create(:title => "Makers Academy",
-                 :url => "http://www.makersacademy.com"/)
+                 :url => "http://www.makersacademy.com")
       # We ask the database how many links we have, it should be 1
       expect(Link.count).to eq(1)
       # Let's get the first (and only) link from the database

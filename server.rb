@@ -1,11 +1,13 @@
-env = ENV["RACK_ENV"] || "development"
-# we're telling the datamapper to use a postgres database on localhost. The name will be "bookmark_manager"
-Datamapper.setup(:default, "postgress://localhost/bookmark_manager_#{env}")
+require "data_mapper"
 
-require './lib/link' # this needs to be done after datamapper is initialised
+env = ENV["RACK_ENV"] || "development"
+# we're telling the DataMapper to use a postgres database on localhost. The name will be "bookmark_manager"
+DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
+
+require './lib/link' # this needs to be done after DataMapper is initialised
 
 # after delcaring your models, you should finalise them
-Datamapper.finalize
+DataMapper.finalize
 
-# however, the database tables dont exist yet. Let's tell datamapper to create them
-Datamapper.auto_upgrade!
+# however, the database tables dont exist yet. Let's tell DataMapper to create them
+DataMapper.auto_upgrade!

@@ -1,0 +1,15 @@
+
+<div id="new-link">
+  <form action="/add_link" method="post">
+    Url:   <input type="text" name="url">
+    Title: <input type="text" name="title">
+           <input type="submit" value="Add link">
+  </form>
+</div>
+
+
+<% @links.each do |link| %>
+  <ul>
+    <a href="http://<%= link.url %>"><%= link.title %></a>
+  </ul>
+<% end %>

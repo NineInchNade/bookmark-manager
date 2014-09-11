@@ -18,6 +18,17 @@ get '/' do
   erb :index
 end
 
+get '/tags/:text' do
+  tag = Tag.first(:text => params[:text])
+  @links = tag ? tag.links : []
+  # if tag
+  #   @links = tag.links
+  # else
+  #   @link = []
+  # end
+  erb :index
+end
+
 post '/add_link' do
   data_url_that_arrives_here   = params[:url]
   data_title_that_arrives_here = params[:title]

@@ -7,6 +7,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 
 require './lib/link' # this needs to be done after
+require './lib/tag'
 
 DataMapper.finalize
 
@@ -20,8 +21,10 @@ end
 post '/add_link' do
   data_url_that_arrives_here   = params[:url]
   data_title_that_arrives_here = params[:title]
-  Link.create(:title => data_title_that_arrives_here, url: data_url_that_arrives_here)
+  data_tag_that_arrives_here   = params["tags"].split(" ").map do |tag|
+  Tag.first_or_create(:text => tag)
+end
+  Link.create(:title => data_title_that_arrives_here, url: data_url_that_arrives_here, :tags =>data_tag_that_arrives_here)
   redirect to '/'
 end
-
 

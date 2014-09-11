@@ -3,6 +3,7 @@
   <form action="/add_link" method="post">
     Url:   <input type="text" name="url">
     Title: <input type="text" name="title">
+    Tag:   <input type="text" name="tags">
            <input type="submit" value="Add link">
   </form>
 </div>
@@ -10,6 +11,6 @@
 
 <% @links.each do |link| %>
   <ul>
-    <a href="http://<%= link.url %>"><%= link.title %></a>
+    <li><a href="http://<%= link.url %>"><%= link.title %></a></li>
   </ul>
 <% end %>

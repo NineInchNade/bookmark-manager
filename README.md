@@ -3,7 +3,9 @@ BOOKMARK_MANAGER
 
 
 Database project, week 6, Lovis Schultze / Merve Silk
-GitHub profiles:  NineInchNade
+GitHub profiles: 
+
+                  NineInchNade
 
                   Mervodactyl
 

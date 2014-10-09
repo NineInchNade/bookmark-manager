@@ -14,8 +14,8 @@ The goal was to create an website based project, a bookmark manager to maintain 
 Technology used:
 ================
 
-Ruby
-Sinatra
-Rspec
-Cucumber 
+* Ruby
+* Sinatra
+* Rspec
+* Cucumber 
 
